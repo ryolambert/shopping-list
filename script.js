@@ -43,7 +43,7 @@ function setDeleteButtonEvent(id) {
     });
 }
 
-//Uncaught SyntaxError somehow when populating the <li>
+//fixed USE backtick ` not '
 function createListItemHtml(itemName, itemAmount, id) {
 	return `<li id = "item${id}">
 		${itemName} - ${itemAmount}
