@@ -3,7 +3,8 @@ window.onload = function () {
 };
 
 function initShoppingList() {
-    let form = document.getElementById("item-form"); 
+    let form = document.getElementById("item-form");
+
     form.addEventListener("submit", (event) => {
         handleItemForm(event, form);
     });
@@ -42,9 +43,14 @@ function setDeleteButtonEvent(id) {
     });
 }
 
+//Uncaught SyntaxError somehow when populating the <li>
 function createListItemHtml(itemName, itemAmount, id) {
-    return '<li id="item${id}"> ${itemName} - ${itemAmount} <button id="button${id}" type="button">Delete Item</button></li>';
+	return '<li id = "item${id}">
+		${itemName} - ${itemAmount}
+		<button id="button${id}" type="button">Delete Item</button>
+	</li>';
 }
+
 
 function removeListItem(id) {
     let listItem = document.getElementById("item"+id);
